@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4285f4"/>
+    <meta name="description" content="Estaciona.com - Plataforma inteligente de estacionamiento medido que permite a los usuarios encontrar lugar para estacionar y pagar su estadía en tiempo real.">
+    <meta name="author" content="Estaciona.com">
+    <link rel="canonical" href="https://estaciona.com/"/>
+    <link rel="alternate" hreflang="es-ar" href="https://estaciona.com/">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16"/>
+    <title>Estaciona.com | Sistema de Estacionamiento Medido</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/app.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/empresas.css">
+    <link rel="stylesheet" type="text/css" href="css/landing.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css"/>
+  </head>
+  <div id="preload">
+    <svg version="1.1" class="e-logo gif" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 483 552">
+      <style type="text/css">
+        circle {
+          fill: #fff;
+          stroke: none;
+        }/*fondo circulo E*/
+        .E {
+          fill: #3F82F1;
+        }/*letra E*/
+        .e-contorno {
+          fill: none;
+          stroke-width: 29;
+          stroke: white;
+          stroke-width: 29;
+          stroke-linecap: round;
+        } /*Linea superior*/
+      </style>
+      <circle cx="240.6" cy="226.9" r="137.6" />
+      <polygon class="E" points="294.1,140.8 294.1,170 224.6,170 224.6,211 294.1,211 294.1,240 224.6,240 224.6,280.7 294.1,280.7 294.1,309.8 187.9,309.8 187.9,140.8  "/>
+      <path class="e-contorno" id="gabi"  d="M375.3,370.6A194.028,194.028 0 1 0 94.6,357.1L255,519"/>
+    </svg>
+  </div>
+  <body class="page-gobiernos">
+    <div id="wrapper">
+      <div class="overlay hidden-md-up"></div>
+      <!-- Sidebar menu mobile -->
+      <nav class="navbar navbar-inverse navbar-fixed-top hidden-lg-up Transparent" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+          <li class="sidebar-brand">
+            <a data-pjax="" href="views/home.html" class="bgbutton">
+              <span class="navbar-brand logotipo"></span>
+            </a>
+          </li>
+          <li>
+            <a data-pjax="" href="views/publicos.html">
+              Ciudades
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Pagos/Abonos
+            </a>
+          </li>
+          <li>
+            <a data-pjax="" href="views/empresas.html">
+              Empresa
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              App
+            </a>
+          </li>
+          <li class="collapsed">
+            <a class="collapsed" data-toggle="collapse" data-target="#dashboard" href="#" aria-expanded="false">
+              Redes Sociales
+            </a>
+            <ul class="sub-menu collapse" id="dashboard" aria-expanded="false">
+              <li>
+                <a href="#">
+                  facebook
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  twitter
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  LikedIn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Youtube
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              Empresa
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Pedí tu Demo
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/estacionaok">
+              Follow
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="menu Transparent">
+        <button type="button" class="hamburger hidden-lg-up is-closed" data-toggle="offcanvas">
+          <span class="hamb-top hidden-lg-up bgbutton"></span>
+          <span class="hamb-middle hidden-lg-up bgbutton"></span>
+          <span class="hamb-bottom hidden-lg-up bgbutton"></span>
+        </button>
+        <header class="globalNav noDropdownTransition">
+          <div class="container-fluid ml-lg-4">
+            <ul class="navRoot">
+              <li class="navSection logo">
+                <h1><a class="bg-white" data-pjax="" href="views/home.html">
+                  <span class="navbar-brand p-0">
+                    <svg id="logoestaciona" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2202.23 512.57">
+                      <title>Estaciona.Com</title>
+                      <g id="Layer_1-2" data-name="Layer_1" class="cls">
+                        <path
+                        d="M211.76,74.16a137.6,137.6,0,1,0,137.6,137.6A137.59,137.59,0,0,0,211.76,74.16Z"
+                        ></path><path
+                        d="M337.06,337.06a17.28,17.28,0,0,0,24.44,24.43,211.74,211.74,0,1,0-299.48,0L213.1,512.57l24.43-24.44L86.46,337.06a177.2,177.2,0,1,1,250.6,0Z"
+                        ></path><polygon
+                        class="cl" points="265.3 125.69 265.3 154.89 195.82 154.89
+                        195.82 195.83 265.3 195.83 265.3 224.88 195.82 224.88 195.82
+                        265.59 265.3 265.59 265.3 294.67 159.09 294.67 159.09 125.69
+                        265.3 125.69" ></polygon>
+                      </g>
+                      <g class="cls">
+                        <path
+                        d="M703.3,297.78H608.41V130H703.3V153.2H635.83v45.67h63.22v22.95H635.83v52.67H703.3Z"
+                        ></path><path
+                        d="M822,261.64q0,18.58-13.54,28.51t-38.79,9.93q-25.35,0-40.73-7.69V269.1q22.38,10.32,41.65,10.32,24.9,0,24.9-15a11.93,11.93,0,0,0-2.75-8q-2.76-3.21-9.07-6.65a156.06,156.06,0,0,0-17.55-7.81q-21.93-8.49-29.67-17t-7.74-22q0-16.29,13.14-25.3t35.74-9a101.26,101.26,0,0,1,42.34,9.06L811.16,198q-20.53-8.49-34.54-8.49-21.35,0-21.34,12.17,0,6,5.57,10.09t24.26,11.36q15.72,6.09,22.84,11.13a33.38,33.38,0,0,1,10.56,11.65A33.78,33.78,0,0,1,822,261.64Z"
+                        ></path><path
+                        d="M898.37,278.28a65.71,65.71,0,0,0,19.73-3.1v20.31a54.3,54.3,0,0,1-11.53,3.27,79.38,79.38,0,0,1-14.63,1.32q-38.33,0-38.32-40.39V191.3H836.29V179.37l18.59-9.87,9.18-26.85H880.7v28.22h36.14V191.3H880.7v67.93q0,9.75,4.87,14.4T898.37,278.28Z"
+                        ></path><path
+                        d="M1022.87,297.78l-5.39-17.67h-.92q-9.18,11.59-18.48,15.78t-23.86,4.19q-18.71,0-29.21-10.1t-10.5-28.57q0-19.62,14.58-29.61t44.4-10.9l21.92-.69v-6.76q0-12.16-5.68-18.19t-17.61-6a61,61,0,0,0-18.71,2.87,141.44,141.44,0,0,0-17.21,6.77l-8.72-19.28a94.29,94.29,0,0,1,22.6-8.2,104.36,104.36,0,0,1,23.18-2.81q24.21,0,36.55,10.56t12.34,33.16v85.48Zm-40.16-18.36q14.68,0,23.58-8.2t8.89-23v-11l-16.29.69q-19,.68-27.72,6.36t-8.66,17.39q0,8.49,5,13.14T982.71,279.42Z"
+                        ></path><path
+                        d="M1131,300.08q-28.8,0-43.78-16.81t-15-48.25q0-32,15.66-49.23t45.27-17.21q20.08,0,36.14,7.46l-8.14,21.68q-17.1-6.65-28.23-6.65-32.94,0-32.93,43.72,0,21.35,8.2,32.07t24,10.73a69,69,0,0,0,34.08-8.95v23.52a53.13,53.13,0,0,1-15.43,6.08A92.87,92.87,0,0,1,1131,300.08Z"
+                        ></path><path
+                        d="M1194.53,137.25q0-7.23,4-11.13t11.3-3.9q7.11,0,11.07,3.9t4,11.13q0,6.88-4,10.85t-11.07,4q-7.35,0-11.3-4T1194.53,137.25Zm28.57,160.53h-27V170.87h27Z"
+                        ></path><path
+                        d="M1374.22,234.1q0,31.1-16,48.54t-44.41,17.44q-17.77,0-31.44-8a53,53,0,0,1-21-23.07q-7.35-15-7.35-34.88,0-30.87,15.84-48.19t44.63-17.33q27.54,0,43.61,17.73T1374.22,234.1Zm-92.37,0q0,43.95,32.47,44,32.13,0,32.13-44,0-43.48-32.36-43.49-17,0-24.61,11.25T1281.85,234.1Z"
+                        ></path><path
+                        d="M1516.85,297.78h-27.08v-78q0-14.7-5.91-21.92t-18.76-7.23q-17.1,0-25,10.1t-7.92,33.85v63.22h-27V170.87h21.12l3.78,16.64h1.38a37.52,37.52,0,0,1,16.29-14,54.6,54.6,0,0,1,23.41-4.93q45.67,0,45.67,46.47Z"
+                        ></path><path
+                        d="M1633.78,297.78l-5.4-17.67h-.91q-9.18,11.59-18.48,15.78t-23.86,4.19q-18.72,0-29.21-10.1t-10.5-28.57q0-19.62,14.58-29.61t44.4-10.9l21.92-.69v-6.76q0-12.16-5.68-18.19t-17.61-6a61,61,0,0,0-18.71,2.87,141.44,141.44,0,0,0-17.21,6.77l-8.72-19.28a94.29,94.29,0,0,1,22.6-8.2,104.29,104.29,0,0,1,23.18-2.81q24.21,0,36.55,10.56t12.33,33.16v85.48Zm-40.16-18.36q14.69,0,23.58-8.2t8.89-23v-11l-16.3.69q-19,.68-27.71,6.36t-8.66,17.39q0,8.49,5,13.14T1593.62,279.42Z"
+                        ></path><path
+                        d="M1686.68,283.44q0-8.37,4.36-12.85t12.62-4.48q8.37,0,12.73,4.65t4.36,12.68q0,8.15-4.41,12.91t-12.68,4.76q-8.27,0-12.62-4.7T1686.68,283.44Z"
+                        ></path><path
+                        d="M1806.47,300.08q-28.8,0-43.78-16.81t-15-48.25q0-32,15.66-49.23t45.27-17.21q20.08,0,36.14,7.46l-8.14,21.68q-17.1-6.65-28.23-6.65-32.94,0-32.93,43.72,0,21.35,8.2,32.07t24,10.73a69,69,0,0,0,34.08-8.95v23.52a53.13,53.13,0,0,1-15.43,6.08A92.87,92.87,0,0,1,1806.47,300.08Z"
+                        ></path><path
+                        d="M1984.21,234.1q0,31.1-16,48.54t-44.41,17.44q-17.77,0-31.44-8a53,53,0,0,1-21-23.07q-7.35-15-7.35-34.88,0-30.87,15.84-48.19t44.63-17.33q27.54,0,43.61,17.73T1984.21,234.1Zm-92.37,0q0,43.95,32.47,44,32.13,0,32.13-44,0-43.48-32.36-43.49-17,0-24.61,11.25T1891.84,234.1Z"
+                        ></path><path
+                        d="M2122.14,297.78h-27.08V219.53q0-14.58-5.51-21.75t-17.21-7.17q-15.62,0-22.89,10.16t-7.29,33.79v63.22h-27V170.87h21.12l3.78,16.64h1.38a35.16,35.16,0,0,1,15.32-14,49.39,49.39,0,0,1,22.09-4.93q29.25,0,38.78,20h1.84a38.62,38.62,0,0,1,15.83-14.68,50.25,50.25,0,0,1,23.41-5.28q22.73,0,33.1,11.47t10.39,35v82.73h-27V219.53q0-14.58-5.56-21.75t-17.27-7.17q-15.72,0-23,9.81t-7.28,30.12Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span></a></h1>
+              </li>
+              <li class="navSection secondary primary hidden-md-down float-right mr-4">
+                <a class="rootLink hasDropdown textos" data-dropdown="products">
+                  Soluciones
+                </a>
+                <a class="rootLink hasDropdown textos" data-dropdown="apps">
+                  App
+                </a>
+                <a class="rootLink hasDropdown textos d-none" data-dropdown="price">
+                  Pagos
+                </a>
+                <a class="rootLink hasDropdown textos" data-dropdown="company">
+                  Empresa
+                </a>
+                <button class="btn rootLink demos demo textos bgborder" data-scroll-to="contact">
+                  Pedí tu Demo
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdownRoot">
+            <div class="dropdownBackground">
+              <div class="alternateBackground"></div>
+            </div>
+            <div class="dropdownArrow"></div>
+            <div class="dropdownContainer">
+              <div class="dropdownSection active" data-dropdown="products">
+                <div class="dropdownContent">
+                  <div class="grey">
+                    <a class="linkContainer" data-pjax="" href="views/publicos.html">
+                      <div class="linkGroup">
+                        <ul>
+                          <li>
+                            <div class="productLinkContent">
+                              <h3 class="linkTitle">Para Ciudades</h3>
+                              <p class="linkSub linkIcon">
+                                Al día con tus infracciones.
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="grey">
+                    <a class="linkContainer" data-pjax="" href="views/empresas1.html">
+                      <div class="linkGroup">
+                        <ul>
+                          <li>
+                            <div class="productLinkContent">
+                              <h3 class="linkTitle">Para Empresas</h3>
+                              <p class="linkSub linkIcon">
+                                Conseguí estacionamiento libre.
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdownSection right" data-dropdown="price">
+                <div class="dropdownContent">
+                  <div class="grey">
+                    <div class="linkGroup">
+                      <ul>
+                        <li>
+                          <a class="linkContainer" href="#">
+                            <div class="productLinkContent">
+                              <h3 class="linkTitle">Permisos</h3>
+                              <p class="linkSub linkIcon">
+                                Al día con tus infracciones.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="grey">
+                    <div class="linkGroup">
+                      <ul>
+                        <li>
+                          <a class="linkContainer" href="#">
+                            <div class="productLinkContent">
+                              <h3 class="linkTitle">Infracciones</h3>
+                              <p class="linkSub linkIcon">
+                                Conseguí estacionamiento libre.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdownSection right" data-dropdown="apps">
+                <div class="dropdownContent">
+                  <div class="grey">
+                    <a class="linkContainer" href="https://estaciona.com">
+                      <ul class="linkGroup linkList">
+                        <li>
+                          <h3 class="linkTitle linkIcon">Ver App </h3>
+                        </li>
+                      </ul>
+                    </a>
+                  </div>
+                  <div class="grey">
+                    <a class="linkContainer linkGroup" data-pjax="" href="views/faqs.html">
+                      <ul class="linkGroup linkList">
+                        <li>
+                          <h3 class="linkTitle linkIcon">FAQ's</h3>
+                        </li>
+                      </ul>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdownSection right" data-dropdown="company">
+                <div class="dropdownContent">
+                  <div class="grey">
+                    <a class="linkContainer" data-pjax="" href="views/quienes-somos.html">
+                      <ul class="linkGroup linkList">
+                        <li>
+                          <h3 class="linkTitle linkIcon">Quienes Somos </h3>
+                        </li>
+                      </ul>
+                    </a>
+                  </div>
+                  <div class="grey d-none">
+                    <a class="linkContainer" data-pjax="" href="">
+                      <ul class="linkGroup linkList">
+                        <li> 
+                          <h3 class="linkTitle linkIcon">Empleate con nosotros </h3>
+                        </li>
+                      </ul>
+                    </a>
+                  </div>
+                  <div class="grey d-none">
+                    <div class="linkGroup">
+                      <a class="linkContainer" href="https://estaciona.com" >
+                        <h3 class="linkTitle linkIcon">Casos de Exito </h3>
+                      </a>
+                      <ul class="blogPosts">
+                        <li>
+                          <a href="http://estaciona.com">
+                            <span class="title new">Unete</span>
+                            <span class="new-badge">Nuevo</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </nav>
+      <div id="contenido"></div>
+      <div id="bgim" class="mostrar c-white center-text contact-form-block content nav_white" data-scroll-target="contact">
+        <div class="container pt-4">
+          <h2 class="heading-2 mt-0">¿Querés saber más de <strong>nuestro servicio</strong>?</h2>
+        </div>
+        <div class="container collapse" id="formulario1">
+          <h2 class="heading-2 result d-none" id="result"></h2>
+          <div class="contact-form">
+            <p class="contact-form-description more">
+              Dejanos un mensaje y un representante te contactará en la brevedad.
+            </p>
+            <div class="form">
+              <form class="contactanos" action="" onsubmit="return Submit()" id="form">
+                <div class="form__group">
+                  <input data-span="span1" class="form__input" type="text" id="name" placeholder="Nombre Completo" required>
+                  <span id="span1" class="form__input-focus"></span>
+                </div>
+                <div class="form__group">
+                  <input data-span="span2" class="form__input" type="email" id="email" placeholder="E-mail" required>
+                  <span id="span2" class="form__input-focus"></span>
+                </div>
+                <div class="form__group">
+                  <input data-span="span3" class="form__input" type="tel" id="phone" placeholder="Teléfono" required>
+                  <span id="span3" class="form__input-focus"></span>
+                </div>
+                <div class="form__group">
+                  <select class="selectpicker form__input" id="asunto" data-span="span4">
+                    <option class="color" value="">Asunto</option>
+                    <option class="color" value="1">Estacionamiento Privado</option>
+                    <option class="color" value="2">Estacionamiento Medido</option>
+                    <option class="color" value="3">App</option>
+                    <option class="color" value="4">Otro</option>
+                  </select>
+                  <span id="span4" class="form__input-focus"></span>
+                </div>
+                <div class="form__group">
+                  <textarea data-span="span5" class="form__input" id="body" rows="8" cols="80" placeholder="Mensaje" required></textarea>
+                  <span id="span5" class="form__input-focus"></span>
+                </div>
+              </form>
+              <button class="btn-color-otl d-none" id="send">
+                ENVIAR
+              </button>
+            </div>
+          </div>
+        </div>
+        <p>
+          <button id="bgblue" class="word btn btn-primary mt-4 mb-4 collapsed sandwich2 " data-toggle="collapse" href="#formulario1" role="button" aria-expanded="false" aria-controls="formulario1 text-primary">
+            CONTACTANOS
+          </button>
+        </p>
+      </div>
+      <div class="footer text-center text-xs-center text-sm-left text-md-left bg-ligh">
+        <div class="col-12 mt-4 pt-4 pb-4 mb-4 ml-lg-4 mr-lg-4" id="footer">
+          <div class="ft">
+            <div class="rows col-9 mt-4 hidden-xs-down hidden-md-down">
+              <div class="ml-4 col-3">
+                <div class="">
+                  <h5 class="">SOLUCIONES</h5>
+                  <ul class="list-unstyled quick-links">
+                    <li>
+                      <a data-pjax="" href="views/publicos.html"><i class="fa"></i>Para Ciudades</a>
+                    </li>
+                    <li>
+                      <a data-pjax="" href="views/empresas1.html"><i class="fa"></i>Para Empresas</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-3 ml-3">
+                <div class="hidden-xs-down hidden-md-down ">
+                  <h5>APP</h5>
+                  <ul class="list-unstyled quick-links">
+                    <li>
+                      <a href="javascript:void();"><i class="fa"></i>Ver App</a>
+                    </li>
+                    <li class="d-none">
+                      <a data-pjax="" href="views/faqs.html"><i class="fa"></i>FAQ's</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void();"><i class="fa"></i>Demo</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="hidden-xs-down">
+                  <h5>EMPRESA</h5>
+                  <ul class="list-unstyled quick-links">
+                    <li>
+                      <a data-pjax="" href="views/quienes-somos.html"><i class="fa"></i>Quienes somos</a>
+                    </li>
+                    <li class="d-none">
+                      <a href="javascript:void();"><i class="fa"></i>Empleos</a>
+                    </li>
+                    <li class="d-none">
+                      <a href="javascript:void();"><i class="fa"></i>Casos de exito</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="hidden-xs-down">
+                  <h5 class="">Soporte</h5>
+                  <ul class="list-unstyled quick-links">
+                    <li>
+                      <a data-pjax="" href="views/faqs.html"><i class="fa"></i>FAQ's</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-lg-3 col-md-12 col-xs-12 lines">
+              <h6 class="text-center mb-2"><img class="logofooter" src="images/logo.svg" alt="Estaciona.com"></h6>
+              <p class="text-center textfooter">
+                <strong>Estaciona.com</strong>
+                <a href="https://goo.gl/maps/xidyrfnj5rT2" target="_blank">
+                  <br>
+                  Bartolome Mitre 430
+                  <br>
+                  PB, CABA 1036 Argentina
+                </a>
+              </p>
+              <p class="hidden-md-up text-center">
+                <button type="button" class="btn btn-md mt-4 mb-4 sandwich">
+                  Pedí tu Demo
+                </button>
+              </p>
+              <ul class="mt-2 list-unstyled list-inline social text-center">
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/EstacionaOK" target="_blank"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/EstacionaOK" target="_blank"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/estacionaok" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item d-none">
+                  <a href="javascript:void();" target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="mailto:info@estaciona.com" target="_blank">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--wrapper-->
+    <footer class="main-footer pr-0 pl-0">
+      <p>
+        Copyright © <strong>Reconquista.VC</strong> 2018
+      </p>
+      <p>
+        <a href="#derechos" type="" data-toggle="modal" data-target="#derechos" class="text-white1">
+          <small> Todos los derechos reservados |</small>
+        </a>
+        <a target="_blank" data-pjax="" href="views/politicas.html" type="" class="text-white1">
+          <small>Politicas de Privacidad.</small>
+        </a>
+        <div class="modal fade" id="derechos" tabindex="-1" role="dialog" aria-labelledby="derechos" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-muted" id="derechos">Terminos y Condiciones</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="text-justify text-muted">
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+                  laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
+                  nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                  dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
+                  at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+                  magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget
+                  quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
+                  bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+                  laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
+                  nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+                  dui. Donec ullamcorper nulla non metus auctor fringilla.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="politicas" tabindex="-1" role="dialog" aria-labelledby="politicas" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-muted" id="politicas">Politica de Privacidad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="text-justify text-muted">
+                  <strong>Politica de Privacidad de Estaciona.com</strong></p>
+
+                  <p class="text-muted text-justify"><strong>Introducción</strong></p>
+
+                  <p class="text-muted text-justify"><i>Estaciona.com</i>, respeta su privacidad y se compromete a protegerla a través del cumplimiento de esta Política de Privacidad. Esta Política describe nuestras prácticas de privacidad con respecto a nuestras aplicaciones y sitios web. Esta Política no se aplica a las prácticas de terceros que puedan proporcionar servicios o funciones en nuestras aplicaciones o sitios web.
+
+                  Para comprender nuestras políticas y prácticas relacionadas con su información y cómo la trataremos por favor lea esta Política detalladamente. Si usted no está de acuerdo con nuestra política y prácticas, no descargue, registre o utilice el servicio. Al descargar, registrarse o utilizar el servicio, usted acepta esta Política de Privacidad. Esta Política puede cambiar de vez en cuando. El uso continuo del servicio después de hacer cambios a esta Politica será considerado como la aceptación de dichos cambios, por lo que le rogamos que revise periódicamente dicha política.
+
+                  En virtud del art. 5 de la Ley 25.326 de Protección de Datos Personales, los Usuarios prestan su consentimiento para el tratamiento libre y gratuito de los datos personales que han proporcionado al utilizar nuestras aplicaciones o sitios web.</p>
+
+                  <p class="text-justify text-muted"><strong>Información que Recopilamos y Como la Recopilamos</strong></span></p>
+
+                  <p class="text-justify text-muted"><strong><u>Información que Usted Nos Proporciona</u></strong></p>
+
+                  <p class="text-justify text-muted">Al descargar, registrarse o usar nuestras aplicaciones o sitios web, podemos pedirle que proporcione cierta información como:
+
+                  Información Personal. Por la cual usted puede ser identificado personalmente, incluyendo, pero no limitado a nombre, número de teléfono, dirección postal y dirección de correo electrónico.
+
+                  Información de Pago. Si realiza compras o crea una cuenta, podemos recopilar la información de su tarjeta de crédito y facturación. 
+
+                  Información del Vehículo. Podemos recolectar el número de su matrícula o patente.
+
+                  Información de Transacciones. Detalles de las transacciones realizadas a través de nuestras aplicaciones y verificación de tales.</p>
+
+                  <p class="text-justify text-muted"><strong><u>Recopilacion Automatica de Informacion</u></strong></p>
+
+                  <p class="text-justify text-muted">Al descargar, acceder o utilizar nuestras aplicaciones o sitios web, estos pueden utilizar tecnologías que recopilan información automáticamente:</p>
+
+                  <p class="text-justify text-muted"><strong>Detalles del Sitio Web.</strong> Podemos recopilar información sobre las partes de nuestras aplicaciones o sitios web que usted usa o sitios web de terceros que visita cuando abandona nuestro sitio web. Podemos trabajar con terceros que recopilan información sobre usted cuando usa nuestras aplicaciones.</p>
+
+                  <p class="text-justify text-muted"><strong>Detalles del Uso de las Aplicaciones.</strong> Al acceder y utilizar las aplicaciones, podemos recopilar automáticamente ciertos detalles de su acceso y uso en las aplicaciones, incluyendo datos de ubicación y comunicación, así como los recursos a los que accede y utiliza en las aplicaciones.</p>
+
+                  <p class="text-justify text-muted"><strong>Información del Dispositivo.</strong> Si descarga nuestras aplicaciones, podemos recopilar información de Su dispositivo móvil.</p>
+
+                  <p class="text-justify text-muted"><strong>Información Sobre su Ubicación.</strong> Para proporcionarle y facilitarle el uso de nuestros servicios, nuestras aplicaciones recopilan información en tiempo real sobre la ubicación de su dispositivo móvil.</p> 
+
+                  <p class="text-justify text-muted"><strong>Otra Información.</strong> Podemos recopilar información sobre su dirección IP, sistema operativo, tipo de navegador, información de la red móvil y el número telefónico del dispositivo.</p>
+
+                  <p class="text-justify text-muted"><strong>Como Usamos Su Información</strong></p>
+
+                  <p class="text-justify text-muted"><strong>La información que recopilamos sobre usted o que usted nos proporciona la utilizamos para:</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Responder sus Solicitudes o Preguntas.</strong> Por ejemplo, podemos utilizar su información para ayudarle a acceder a su cuenta si llegase a olvidar su contraseña.</p>
+
+                  <p class="text-justify text-muted"><strong>Mejorar Nuestros Productos y Servicios.</strong> Podemos utilizar la información para personalizar y mejorar su experiencia. Por ejemplo, podemos ver tendencias de uso para asegurarnos de que nuestros sitios web y aplicaciones sean fáciles de usar.</p>
+
+                  <p class="text-justify text-muted"><strong>Fines de Seguridad.</strong> Podemos utilizar la información para proteger nuestra empresa, nuestros clientes, nuestros sitios web o nuestras aplicaciones.</p>
+
+                  <p class="text-justify text-muted"><strong>Proporcionar Actualizaciones.</strong> Por ejemplo, podemos enviarle un correo electrónico o notificaciones push sobre su cuenta, transacciones, cambios en nuestros sitios web, aplicaciones o políticas.</p>
+
+                  <p class="text-justify text-muted"><strong>Nuestros Propósitos Comerciales Legítimos.</strong> También utilizaremos su información para cumplir con cualquier otro propósito para el cual usted haya proporcionado dicha información. Podemos utilizar la información que usted nos proporcione para cumplir con nuestras obligaciones y hacer cumplir nuestros derechos derivados de cualquier contrato firmado entre usted y nosotros, incluyendo facturación y cobro. Podemos combinar la información que recibimos de terceros con información que ya tenemos.</p>
+
+                  <p class="text-justify text-muted"><strong>De Cualquier Forma Permitida por la Ley.</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Divulgación de Su Información</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Podemos divulgar información agregada sobre nuestros usuarios sin restricción alguna. Además, podemos divulgar información personal que recopilamos o que usted nos proporcione de las siguientes maneras:</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Operadores.</strong> Podemos compartir información con proveedores de estacionamiento para que usted pueda usar sus servicios y para apoyar el proceso de administración y fiscalización o control.</p>
+
+                  <p class="text-justify text-muted"><strong>Proveedores de Servicio.</strong> Podemos compartir información con contratistas, proveedores de servicios y otros terceros que utilizamos para dar soporte a nuestro negocio.</p>
+
+                  <p class="text-justify text-muted"><strong>Cambios en la Estructura Corporativa.</strong>En el caso de una fusión, venta, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos los activos de Estaciona.com, compartiremos información con un posible comprador o sucesor, ya sea actuando como una empresa con estatus operativo o en quiebra, o estatus similar, en el cual la información personal se encuentra entre los activos transferidos.</p>
+
+                  <p class="text-justify text-muted"><strong>Para Proteger nuestros Derechos y Seguridad.</strong> Si creemos que la divulgación es necesaria o apropiada para proteger los derechos, propiedad o seguridad de Estaciona.com, o de nuestros clientes u otros.</p>
+
+                  <p class="text-justify text-muted"><strong>Para Fines Legales.</strong> Para cumplir con cualquier orden judicial, ley o proceso legal, incluyendo respuesta a cualquier solicitud gubernamental o regulatoria.</p>
+
+                  <p class="text-justify text-muted"><strong>A nuestras Subsidiarias y Afiliadas.</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Para Cualquier Otro Propósito que Declaremos Cuando usted Proporciona Información.</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Con su Consentimiento.</strong></p>
+
+                  <p class="text-justify text-muted"><strong>Otra Información</strong></p>
+
+                  <p class="text-justify text-muted"><strong><u>Seguridad de Datos</u></strong></p>
+
+                  <p class="text-justify text-muted">Hemos implementado medidas diseñadas para proteger su información personal de pérdidas accidentales, de accesos no autorizados, alteraciones y divulgaciones. Sin embargo, el Internet es un lugar público. No podemos prometer que su información permanecerá segura. Le recomendamos que tenga cuidado al compartir información. No comparta su contraseña con otras personas y elija contraseñas seguras.</p>
+
+                  <p class="text-justify text-muted">Nuestros servidores pueden estar ubicados en Estados Unidos. Su información puede ser enviada a Estados Unidos. Al utilizar nuestras aplicaciones, y al darnos su información, usted acepta dicha transferencia. También entiende que Estados Unidos puede no proporcionarle tantas protecciones como las leyes de su país.</p>
+
+                  <p class="text-justify text-muted">La seguridad de su información también depende de usted. Cuando le hayamos dado (o donde haya escogido) un PIN o una contraseña para acceder a ciertas partes de nuestras aplicaciones, usted es responsable de mantener dicha información confidencial. Le pedimos que no comparta esta información con nadie.</p>
+
+                  <p class="text-justify text-muted"><strong>Niños menores de 16 años</strong></p>
+
+                  <p class="text-justify text-muted">Nuestra plataforma no está destinada a niños menores de 16 años. No recopilamos información personal a sabiendas de niños menores de 16 años.</p>
+
+                  <p class="text-justify text-muted"><strong>Terceros</strong></p>
+
+                  <p class="text-justify text-muted">Nuestros sitios y aplicaciones pueden contener enlaces a sitios de terceros. Si hace clic en uno de esos enlaces, estos le llevarán a sitios que no controlamos. Esta Política no se aplica a las prácticas de dichos sitios. Usted debe leer atentamente las políticas de privacidad de terceros.</p>
+
+                  <p class="text-justify text-muted"><strong>Cambios a Nuestra Política de Privacidad</strong></p>
+
+                  <p class="text-justify text-muted">Podemos actualizar nuestra Política de Privacidad de vez en cuando. Si realizamos cambios materiales en cuanto a la forma en que tratamos la información personal de nuestros usuarios, publicaremos la nueva política de privacidad en nuestro sitio web.</p>
+
+                  <p class="text-justify text-muted"><strong>Acceso y Corrección de Su Información Personal</strong></p>
+
+                  <p class="text-justify text-muted">Puede revisar y cambiar su información personal ingresando y visitando el perfil de su cuenta.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
+      <div class="hidden">
+        <script type="text/javascript">
+          window.addEventListener('load', precargaImagenes);
+          function precargaImagenes(){
+            var img1 = new Image();
+            img1.src = 'images/form-bg.jpg';
+            var img2 = new Image();
+            img2.src = 'images/admin.png';
+            var img3 = new Image();
+            img3.src = 'images/iphone.png';
+            var img4 = new Image();
+            img4.src = 'images/3smartphone.png';
+            var img5 = new Image();
+            img5.src = 'images/3smartphone.png';
+            var img6 = new Image();
+            img6.src = 'images/2smartphone.png';
+            var img7 = new Image();
+            img7.src = 'images/1smartphone.png';
+            var img8 = new Image();
+            img8.src = 'images/hero-gobiernos.jpg';
+            var img9 = new Image();
+            img9.src = 'images/bg3.png';
+            var img10 = new Image();
+            img10.src = 'images/control-y-eficiencia.jpg';
+            var img11 = new Image();
+            img11.src = 'images/estacionamiento-privado.jpg';
+            //Cuando se terminan de cargar las imágenes se le agrega la clase "close" a #preload.
+            var preload = document.getElementById('preload');
+            preload.classList.add('close');
+            console.log('Unite a la Experiencia del Smart Parking!');
+          }
+        </script>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/navigation.js"></script>
+    <script type="text/javascript" src="js/jquery.pjax.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="js/dropzone.js"></script>
+    <script type="text/javascript" src="js/dropzone-amd-module.js"></script>
+  </body>
+</html>

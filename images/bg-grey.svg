@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1444px" height="667px" viewBox="0 0 1444 667" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>diagonal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="1.7059949%" x2="50%" y2="97.3174426%" id="linearGradient-1">
+            <stop stop-color="#333563" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#333563" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="48.9703158%" y1="77.5687235%" x2="50%" y2="97.3174426%" id="linearGradient-2">
+            <stop stop-color="#333563" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#333563" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="diagonal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.05">
+        <g id="Gradient-angle">
+            <polygon id="Ink-Background" fill="url(#linearGradient-1)" transform="translate(722.000000, 333.500000) rotate(-180.000000) translate(-722.000000, -333.500000) " points="0 0 1444 0 1444 565.473489 0 667"></polygon>
+            <polygon id="Ink-Background" fill="url(#linearGradient-2)" transform="translate(722.000000, 333.500000) rotate(-180.000000) translate(-722.000000, -333.500000) " points="0 0 1444 0 1444 565.473489 0 667"></polygon>
+        </g>
+    </g>
+</svg>
